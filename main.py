@@ -9,18 +9,19 @@ def main():
     pattern_height = 2
 
     # cada vector(patron) representa una matriz cuadrada
-    patterns = np.array([[1,1,-1,-1.],
-                     [-1,-1,1,1.],], dtype=np.float)
+    patterns = np.array([[1,1,-1,-1],
+                     [-1,-1,1,1],], dtype=np.float)
     showPatterns(pattern_width, pattern_height, patterns)
-
-    patternFail = np.array([[-1,-1,-1,1]])
-    showPattern(pattern_width, pattern_height, patternFail, "erróneo")
 
     generalWeightMatrix = learn(pattern_width, pattern_height, patterns)
 
+    print (generalWeightMatrix)
+
+    patternFail = np.array([[-1,-1,-1,1]])
+    showPattern(pattern_width, pattern_height, patternFail, "incompleto")
+
     patronAsociado = searchPattern(patternFail, generalWeightMatrix)
     showPattern(pattern_width, pattern_height, patronAsociado, "asociado")
-
 
 
 if __name__ == "__main__":

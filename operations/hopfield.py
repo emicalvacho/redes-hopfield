@@ -1,8 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Cada elemento de la matriz representa una neurona con su carga asociada (positiva, negativa)
-
 # Matriz general de pesos: suma de cada matriz de pesos que resulta de cada patron
 # La matriz de pesos asociada a un patron se obtiene multiplicando:
 # patron(vector) transpuesto * patron(vector) - identidad
@@ -14,7 +12,7 @@ def learn(pw, ph, patterns):
     return generalWeightMatrix
 
 # Proceso de búsqueda de patrón asociado
-# Se multiplica el patron erroneo por la matriz general de pesos general
+# Se multiplica el patron incompleto por la matriz general de pesos general
 # al resultado de la misma se le aplica np.sign() 
 # debido a que una neurona esta activada cuando su valor es > 0 y descativada si su valor es < 0
 # el vector obtenido es la nueva entrada a la red y asi sucesivamente
